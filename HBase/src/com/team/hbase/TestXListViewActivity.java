@@ -7,13 +7,12 @@ import java.util.Map;
 
 import android.os.Handler;
 import android.widget.BaseAdapter;
-import android.widget.SimpleAdapter;
 
 import com.team.hbase.activity.HBaseXListViewActivity;
 
 public class TestXListViewActivity extends HBaseXListViewActivity<Map<String, String>> {
 	private List<Map<String, String>> datas=new ArrayList<Map<String,String>>();
-	private SimpleAdapter adapter;
+	private TestAdapter adapter;
 	@Override
 	public void request() {
 		loadData();
@@ -32,7 +31,7 @@ public class TestXListViewActivity extends HBaseXListViewActivity<Map<String, St
 	@Override
 	public void initData() {
 		setActionBarTitle("测试XListView");
-		adapter=new SimpleAdapter(this, datas, android.R.layout.simple_list_item_1, new String[]{"title"}, new int[]{android.R.id.text1});
+		adapter=new TestAdapter(this, datas);
 		loadData();
 	}
 	/**
