@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#00a2e3"
+        android:gravity="center"
+        android:minHeight="60dp"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" >
+
+        <ImageView
+            android:id="@+id/iv_left_icon"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:src="@drawable/ic_launcher"
+            android:contentDescription="@string/app_name" />
+
+        <LinearLayout
+            android:id="@+id/layout_custom_title_view"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_right_icon"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:src="@drawable/ic_launcher"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+	<ViewStub 
+	    android:id="@+id/vs_error"
+	    android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout="@layout/item_error"
+	    />
+    <FrameLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible"
+         />
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextViewPair">
+        <attr name="nameText" format="string"></attr>
+        <attr name="nameColor" format="reference|color"></attr>
+        <attr name="nameSize" format="dimension"></attr>
+        <attr name="valueText" format="string"></attr>
+        <attr name="valueColor" format="reference|color"></attr>
+        <attr name="valueSize" format="dimension"></attr>
+    </declare-styleable>
+    
+</resources>
