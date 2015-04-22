@@ -44,7 +44,6 @@ public abstract class HBaseXListViewFragment<T> extends Fragment implements IXLi
 		initListView(view);
 		initData();
 		mListView.setAdapter(getAdapter());
-		mDataSource=getDataSource();
 		return view;
 	}
 	
@@ -91,8 +90,12 @@ public abstract class HBaseXListViewFragment<T> extends Fragment implements IXLi
 	 * @TODO 加载完成
 	 */
 	public void onLoadComplete(long totalSize,List<T> newDatas) {
-		if(mDataSource==null) 
-			throw new NullPointerException("DataSource must be not null");
+		if(mDataSource==null) {
+			mDataSource=getDataSource();
+			if(mDataSource==null){
+				throw new NullPointerException("DataSource must be not null");
+			}
+		}
 		stopRefreshOrLoad();
 		if(current_page==1){
 			mDataSource.clear();

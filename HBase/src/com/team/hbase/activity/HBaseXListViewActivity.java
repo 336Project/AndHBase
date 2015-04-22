@@ -37,7 +37,6 @@ public abstract class HBaseXListViewActivity<T> extends HBaseActivity  implement
 		initListView();
 		initData();
 		mListView.setAdapter(getAdapter());
-		mDataSource=getDataSource();
 	}
 	/**
 	 * 
@@ -80,8 +79,12 @@ public abstract class HBaseXListViewActivity<T> extends HBaseActivity  implement
 	 * @TODO 加载完成
 	 */
 	public void  onLoadComplete(long totalSize,List<T> newDatas) {
-		if(mDataSource==null) 
-			throw new NullPointerException("DataSource must be not null");
+		if(mDataSource==null) {
+			mDataSource=getDataSource();
+			if(mDataSource==null){
+				throw new NullPointerException("DataSource must be not null");
+			}
+		}
 		stopRefreshOrLoad();
 		if(current_page==1){
 			mDataSource.clear();
