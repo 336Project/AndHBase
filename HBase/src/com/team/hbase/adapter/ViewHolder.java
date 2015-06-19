@@ -2,6 +2,11 @@ package com.team.hbase.adapter;
 
 import android.util.SparseArray;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * 
@@ -36,7 +41,22 @@ public class ViewHolder {
 		}
 		return (E) view;
 	}
-
+	
+	public TextView getTextView(int viewId){
+		return getView(viewId);
+	}
+	public CheckBox getCheckBox(int viewId){
+		return getView(viewId);
+	}
+	public ImageView getImageView(int viewId){
+		return getView(viewId);
+	}
+	public Button getButton(int viewId){
+		return getView(viewId);
+	}
+	public ImageButton getImageButton(int viewId){
+		return getView(viewId);
+	}
 	public View getConvertView() {
 		return convertView;
 	}

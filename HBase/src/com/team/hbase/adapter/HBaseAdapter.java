@@ -46,7 +46,7 @@ public abstract class HBaseAdapter<T> extends BaseAdapter {
 		}
 		T bean=mDatas.get(position);
 		ViewHolder holder=ViewHolder.get(convertView);
-		convert(holder, bean);
+		convert(holder, bean, position);
 		return holder.getConvertView();
 	}
 	/**
@@ -57,7 +57,7 @@ public abstract class HBaseAdapter<T> extends BaseAdapter {
 	 * @param bean
 	 * @TODO 设置布局内容
 	 */
-	public abstract void convert(ViewHolder holder, T bean);
+	public abstract void convert(ViewHolder holder, T bean, int position);
 	/**
 	 * 
 	 * @author 李晓伟

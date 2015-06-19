@@ -16,7 +16,7 @@ public class TestAdapter extends HBaseAdapter<Map<String, String>> {
 	}
 
 	@Override
-	public void convert(ViewHolder holder, Map<String, String> bean) {
+	public void convert(ViewHolder holder, Map<String, String> bean,int position) {
 		((TextView)holder.getView(android.R.id.text1)).setText(bean.get("title"));
 	}
 
